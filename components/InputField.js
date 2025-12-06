@@ -25,3 +25,20 @@ const InputField = ({
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    marginBottom: 12,
+  },
+  label: {
+    fontSize: 14,
+    marginBottom: 4,
+  },
+  input: {
+    borderWidth: 1,
+    borderRadius: 6,
+    padding: 8,
+  },
+});
+
+export default InputField;
