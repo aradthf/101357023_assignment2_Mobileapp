@@ -88,3 +88,59 @@ const MainScreen = ({ navigation }) => {
         setLoading(false);
       }
     };
+
+return (
+    <View style={styles.container}>
+      <InputField
+        label="Base Currency (e.g., CAD)"
+        value={baseCurrency}
+        onChangeText={setBaseCurrency}
+        placeholder="CAD"
+      />
+
+      <InputField
+        label="Destination Currency (e.g., USD)"
+        value={targetCurrency}
+        onChangeText={setTargetCurrency}
+        placeholder="USD"
+      />
+
+      <InputField
+        label="Amount"
+        value={amount}
+        onChangeText={setAmount}
+        keyboardType="numeric"
+        placeholder="1"
+      />
+
+      {errorMessage ? (
+        <Text style={styles.errorText}>{errorMessage}</Text>
+      ) : null}
+
+      {loading ? (
+        <ActivityIndicator size="large" style={{ marginVertical: 12 }} />
+      ) : (
+        <Button title="Convert" onPress={handleConvert} disabled={loading} />
+      )}
+
+      {result !== null && rate !== null && (
+        <View style={styles.resultContainer}>
+          <Text style={styles.resultText}>
+            Exchange rate ({baseCurrency} → {targetCurrency}): {rate.toFixed(4)}
+          </Text>
+          <Text style={styles.resultText}>
+            {amount} {baseCurrency} = {result.toFixed(4)} {targetCurrency}
+          </Text>
+        </View>
+      )}
+
+      <View style={{ marginTop: 24 }}>
+        <Button
+          title="Go to About Screen"
+          onPress={() => navigation.navigate('About')}
+        />
+      </View>
+    </View>
+  );
+};
+
