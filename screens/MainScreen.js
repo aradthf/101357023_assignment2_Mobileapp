@@ -144,3 +144,24 @@ return (
   );
 };
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 16,
+    justifyContent: 'flex-start',
+  },
+  resultContainer: {
+    marginTop: 16,
+  },
+  resultText: {
+    fontSize: 16,
+    marginBottom: 4,
+  },
+  errorText: {
+    color: 'red',
+    marginBottom: 8,
+  },
+});
+
+export default MainScreen;
+
