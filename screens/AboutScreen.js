@@ -16,3 +16,22 @@ const AboutScreen = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 16,
+    justifyContent: 'flex-start',
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 12,
+  },
+  text: {
+    fontSize: 16,
+    marginBottom: 4,
+  },
+});
+
+export default AboutScreen;
